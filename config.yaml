@@ -1,0 +1,29 @@
+# basic settings
+
+log_dir: ./logs/
+data_dir: 
+need_id: 0
+base_model_setting:
+  model_type: gpt # openai | deepseek | glm
+  model_name: gpt-4o # gpt-4o-mini | deepseek-chat
+
+
+search_setting:
+  need_id: 0
+  iteration_num: 3
+  depth_limit: 5 # the max depth of mcts
+  # mcts setting
+  expand_times: 5 # the max expand times of mcts
+  min_depth: 2 # min depth of mcts for early stop
+  w_exp: 2.5 # balance exploration and exploitation
+
+
+reflection_setting:
+  # reflection model setting
+  model_type: gpt # gpt | deepseek | glm
+  model_name: gpt-4o-mini # gpt-4o-mini | deepseek-chat
+  num_new_thoughts: 1 
+  log_dir: ./logs/reflection
+  log: True
+  train_data: 
+  need_id: 0
